@@ -16,6 +16,7 @@
             android:required="false" />
 
     <application
+        android:name=".Circular"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,6 +28,7 @@
         <activity android:name=".CreateProduct" android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".MainActivity" android:theme="@style/CustomAppTheme" />
         <activity android:name=".Splash"
+            android:exported="false"
             android:theme="@style/CustomAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
