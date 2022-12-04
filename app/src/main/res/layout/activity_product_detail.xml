@@ -33,7 +33,7 @@
 
                 <ImageView
                     android:contentDescription="@string/app_name"
-                    android:src="@drawable/palmoil"
+                    android:src="@drawable/cover"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="2:1"

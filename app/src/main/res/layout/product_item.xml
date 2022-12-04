@@ -19,7 +19,7 @@
 
             <ImageView
                 android:contentDescription="@string/cover_image"
-                android:src="@drawable/palmoil"
+                android:src="@drawable/cover"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="2:1"
@@ -52,7 +52,7 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                
+
                 <RatingBar
                     android:visibility="invisible"
                     android:rating="4"

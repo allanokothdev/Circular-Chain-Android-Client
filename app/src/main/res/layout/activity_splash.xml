@@ -41,6 +41,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/open_sans_bold"
             android:textSize="22sp"
             android:maxLines="3"
@@ -53,12 +54,12 @@
         <TextView
             android:layout_marginTop="20dp"
             android:fontFamily="@font/open_sans_semibold"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textAlignment="gravity"
             android:textColor="@color/black"
             android:layout_gravity="center_horizontal"
             android:text="@string/summary_one"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
 

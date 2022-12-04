@@ -1,7 +1,7 @@
 <resources>
     <!-- Splash &amp;-->
     <string name="app_name">Circular Chain</string>
-    <string name="slogan_one">Bringing Traceability and Sustainability to your Palms</string>
+    <string name="slogan_one">Empowering Sustainable Consumer Choices</string>
 
     <string name="privacypolicy">By Creating an account with Circular Chain, you agree to our <font color='#6698FF'> Privacy Policy</font> and <font color='#6698FF'> Terms of Service</font></string>
     <string name="continuewithGoogle">Continue with Google</string>

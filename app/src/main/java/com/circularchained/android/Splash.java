@@ -97,7 +97,7 @@ public class Splash extends AppCompatActivity implements View.OnClickListener{
 
     private void getState(){
         if (firebaseUser != null){
-            button.setVisibility(View.GONE);
+            button.setVisibility(View.INVISIBLE);
             new Handler().postDelayed(() -> {
                 sendUserToCreateActivity(false);
             }, 100);

@@ -83,13 +83,18 @@ public class ProductDetail extends AppCompatActivity {
             if (task.isSuccessful()){
 
                 HttpsCallableResult resultt = task.getResult();
-                List<Stage> result = (List<Stage>) task.getResult().getData();
-                assert result != null;
-                for (Stage stage: result){
-                    if (!objectList.contains(stage)){
-                        objectList.add(0,stage);
-                        adapter.notifyDataSetChanged();
+                Toast.makeText(mContext, resultt.toString(), Toast.LENGTH_SHORT).show();
+
+                Stage[] result = (Stage[]) task.getResult().getData();
+                if (result != null){
+                    for (Stage stage: result){
+                        if (!objectList.contains(stage)){
+                            objectList.add(0,stage);
+                            adapter.notifyDataSetChanged();
+                        }
                     }
+                } else {
+                    Toast.makeText(mContext, "Sorry, we are yet to verify the Sustainability of this product", Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.INVISIBLE);
 
