@@ -152,7 +152,10 @@ public class Splash extends AppCompatActivity implements View.OnClickListener{
                 Map<String, Object> result = (Map<String, Object>) task.getResult().getData();
                 assert result != null;
                 String privateKey = Objects.requireNonNull(result.get("privateKey")).toString();
+                String address = Objects.requireNonNull(result.get("address")).toString();
+                Toast.makeText(mContext,address,Toast.LENGTH_SHORT).show();
                 GetUser.saveObject(mContext,Constants.PRIVATE_KEY,privateKey);
+                GetUser.saveObject(mContext,Constants.ADDRESS,address);
                 startActivity(new Intent(mContext, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
 
             } else {
