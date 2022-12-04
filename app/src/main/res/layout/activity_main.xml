@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        app:title="Circular Chain"
+        android:layout_alignParentTop="true"
+        app:subtitleTextColor="@color/colorPrimary"
+        app:titleTextColor="@color/colorPrimary"
+        android:background="@color/colorWhite"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:tag="collections"
+            android:id="@+id/imageView"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="@dimen/dimen_10"
+            app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24"
+            android:contentDescription="@string/cover_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/colorPrimary" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="@dimen/dimen_8"
+        android:layout_below="@id/toolbar"
+        android:id="@+id/recyclerView"
+        android:orientation="vertical"
+        android:background="@color/colorAccent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/product_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:minHeight="56dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:iconTint="@color/colorWhite"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textAllCaps="false"
+        android:text="@string/create_product"
+        app:icon="@drawable/outline_article_24"/>
+
+</RelativeLayout>

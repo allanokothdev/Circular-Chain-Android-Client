@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright (c) 2019 . Wilberforce Uwadiegwu. All Rights Reserved.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/darkPrimary" />
+    <item
+        android:bottom="150dp"
+        android:drawable="@drawable/cover"
+        android:gravity="center" />
+    <item
+        android:bottom="100dp"
+        android:drawable="@drawable/cover"
+        android:gravity="bottom|center_horizontal" />
+</layer-list>

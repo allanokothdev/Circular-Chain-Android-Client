@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="@string/step_1"
+        android:maxLines="1"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/timeLineView"
+        android:layout_toEndOf="@id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:layout_width="3dp"
+            android:layout_height="10dp"/>
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_marker"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:tint="@color/colorPrimary"
+            android:contentDescription="@string/app_name" />
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:layout_width="3dp"
+            android:layout_height="300dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/timeLineView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/open_sans_bold"
+            android:id="@+id/subTextView"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:drawablePadding="@dimen/dimen_5"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:maxLines="8"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:id="@+id/subItemTextView"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/outline_location_on_24" />
+
+
+        <TextView
+            android:drawablePadding="@dimen/dimen_5"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:maxLines="8"
+            android:textColor="@color/black"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:id="@+id/dateTextView"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:drawableStartCompat="@drawable/ic_access_time_black_24dp"
+            app:drawableTint="@color/colorPrimaryDark" />
+
+        <RelativeLayout
+            android:layout_marginTop="12dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/nature_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:rating="4"
+                android:numStars="5"
+                android:progressTint="@color/red"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/natureRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/climate_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:rating="4"
+                android:numStars="5"
+                android:progressTint="@color/red"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/climateRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/child_forced_labour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:rating="4"
+                android:numStars="5"
+                android:progressTint="@color/red"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/labourRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/community_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:rating="4"
+                android:numStars="5"
+                android:progressTint="@color/red"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/communityRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/waste_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:rating="4"
+                android:numStars="5"
+                android:progressTint="@color/red"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/wasteRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/colorBlue</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">@color/colorMilky</color>
+
+    <color name="colorPrimarySpotify">#1db954</color>
+    <color name="colorPrimaryTextSpotify">#beb0a5</color>
+    <color name="colorPrimaryDarkSpotify">#282828</color>
+    <color name="colorPrimaryDarkTintSpotify">#121212</color>
+
+    <color name="colorIcon">@color/colorWhite</color>
+    <color name="colorIcona">@color/colorWhite</color>
+    <color name="row_activated">#e0e0e0</color>
+    <color name="colorDarkTransparency">#6F000000</color>
+    <color name="colorDarkTransparenc">#500000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGree">#ffcb02</color>
+    <color name="colorYellow">#F8DE7E</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#bfbfbf</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorGray">#808080</color>
+    <color name="colorBlue">#6698FF</color>
+    <color name="colorPurple">#2B65EC</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorRedy">#c40000</color>
+    <color name="colorMilky">#F8F7F4</color>
+    <color name="colorMagenta">#FF00FF</color>
+    <color name="colorGreeny">#008000</color>
+    <color name="colorPurpl">#0000A0</color>
+    <color name="colorMaroon">#ff992900</color>
+    <color name="colorOrange">#FFA500</color>
+
+    <color name="colorGreen">#78ca28</color>
+    <color name="selected_product_count">#4d4d4d</color>
+    <color name="list_product_name">#121212</color>
+    <color name="list_products_price">#4d4d4d</color>
+    <color name="gradient_2">#3e3e3e</color>
+    <color name="bg_separator">#DA707070</color>
+    <color name="border_remove_item">#fc9898</color>
+    <color name="btn_remove_item">#fc2222</color>
+    <color name="red_dull">#FC5A5A</color>
+    <color name="bg_input_form">#FFEB6E</color>
+    <color name="hint_label">#4E4E4E</color>
+    <color name="grey">#5b5b5b</color>
+    <color name="lbl_secondary">#8d8d8d</color>
+
+    <color name="feminineOne">#999B84</color>
+    <color name="feminineTwo">#F4EEED</color>
+    <color name="feminineThree">#EFD9D1</color>
+    <color name="feminineFour">#DDB7AB</color>
+
+    <color name="feminineSix">#D4C6BD</color>
+    <color name="feminineSeven">#D6B7B5</color>
+    <color name="feminineEight">#3D5361</color>
+
+    <color name="feminineNine">#A17A69</color>
+    <color name="feminineTen">#B5927F</color>
+    <color name="feminineTwelve">#CEAA9A</color>
+    <color name="feminineThirteen">#DABCB2</color>
+    <color name="feminineFourteen">#EBCDC3</color>
+    <color name="feminineFifteen">#E8DBD5</color>
+
+    <color name="feminineSixteen">#A77D54</color>
+    <color name="feminineSeventeen">#84735E</color>
+    <color name="feminineEightteen">#885A3A</color>
+    <color name="feminineNineteen">#C9B09A</color>
+    <color name="feminineTwenty">#DBD0BD</color>
+
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
+
+    <color name="tan">#DABB9F</color>
+    <color name="sienna">#9C5D41</color>
+    <color name="tann">#CA9B80</color>
+    <color name="gray">#97928A</color>
+    <color name="lightGrey">#D1D4D0</color>
+
+    <color name="rusticTwo">#F2EADE</color>
+    <color name="rusticThree">#756763</color>
+    <color name="rusticFour">#80786B</color>
+    <color name="rusticFive">#CBA692</color>
+
+    <color name="elementalOne">#DABB9F</color>
+    <color name="elementalTwo">#9C5D41</color>
+    <color name="elementalThree">#CA9880</color>
+    <color name="elementalFour">#97928A</color>
+    <color name="elementalFive">#D1D4D0</color>
+
+    <color name="earthRomanceOne">#341D17</color>
+    <color name="earthRomanceTwo">#8C7973</color>
+    <color name="earthRomanceFour">#D1A7A0</color>
+    <color name="earthRomanceFive">#E5C6C1</color>
+    <color name="earthRomanceSix">#F3D9D5</color>
+
+    <color name="ligh_meduim_gray" >#f3f3f3</color>
+    <color name="fav_icon_tint">#CAC7C7</color>
+    <color name="actionbar_opacity">#33000000</color>
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#C5CAE9</color>
+    <color name="accent">#E040FB</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="app_primary">#1976D2</color>
+    <color name="app_primary_dark">#1565C0</color>
+    <color name="light_grey">#EEEEEE</color>
+    <color name="white_transparent">#99FFFFFF</color>
+
+    <color name="icons">@color/colorWhite</color>
+    <color name="tag_select_textcolor">@color/colorWhite</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="avatarborder">#f6f6f6</color>
+    <color name="list_divider">#d9d</color>
+    <color name="fragment_bg">#e5e5e5</color>
+    <color name="about_version_text">#757575</color>
+    <color name="colorTextDisable">#66FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">@color/colorPrimary</color>
+
+    <color name="bgBackSideColor">#f4f0ff</color>
+    <color name="bgTitleLeft">#594691</color>
+    <color name="bgTitleRight">@color/colorWhite</color>
+    <color name="bgContentTop">#594691</color>
+    <color name="bgContent">@color/colorWhite</color>
+    <color name="contentDividerLine">#e0e0e0</color>
+    <color name="contentBadgeTitle">#a9a9a9</color>
+    <color name="titleBadgeTitle">#adafb1</color>
+    <color name="titleBadgeText">#adafb1</color>
+    <color name="mainTextColor">#343d43</color>
+    <color name="btnRequest">#ffbf12</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="lightGray">#F2F2F2</color>
+    <color name="disabledBtnBg">#999999</color>
+
+    <color name="colorGrey50">#fafafa</color>
+    <color name="colorGrey100">#f5f5f5</color>
+    <color name="colorGrey200">#eeeeee</color>
+    <color name="colorGrey300">#e0e0e0</color>
+    <color name="colorGrey400">#bdbdbd</color>
+    <color name="colorGrey500">#9e9e9e</color>
+    <color name="primaryText">#de000000</color> <!-- 87% -->
+    <color name="secondaryText">#8a000000</color> <!-- 54% -->
+    <color name="tertiaryText">#61000000</color> <!-- 38% -->
+    <color name="colorDivider">#1f000000</color> <!-- 12% black -->
+    <color name="colorBackgroun">#eeeeee</color>
+
+    <color name="colormary">#3F51B5</color>
+    <color name="colormaryDark">#303F9F</color>
+    <color name="colorcent">#FF4081</color>
+
+    <color name="blue_grey_400">#78909C</color>
+    <color name="light_grey_400">#E6E6E6</color>
+    <color name="light_green_700">#689F38</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blu">#4286f4</color>
+    <color name="red">#f44242</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="lighter_grey">#DDDDDD</color>
+    <color name="dark">#9A000000</color>
+    <color name="home_page_mode_item_subtitle">#CCFFFFFF</color>
+    <color name="reticle_ripple">#9AFFFFFF</color>
+    <color name="bounding_box_gradient_start">#00FFFFFF</color>
+    <color name="bounding_box_gradient_end">@color/white</color>
+    <color name="object_detected_bg_gradient_start">#00000000</color>
+    <color name="object_detected_bg_gradient_end">#66000000</color>
+    <color name="object_confirmed_bg_gradient_start">#40000000</color>
+    <color name="object_confirmed_bg_gradient_end">#A0000000</color>
+    <color name="object_reticle_outer_ring_fill">#1F000000</color>
+    <color name="object_reticle_outer_ring_stroke">#9AFFFFFF</color>
+    <color name="object_reticle_inner_ring">@color/white</color>
+    <color name="barcode_reticle_background">#99000000</color>
+    <color name="barcode_reticle_stroke">#40000000</color>
+    <color name="barcode_field_value">#797979</color>
+    <color name="barcode_field_box_stroke">#757575</color>
+    <color name="product_description">#5F6368</color>
+
+    <color name="colorPrimaryLight">#616161</color>
+    <color name="colorText">#eeeeee</color>
+    <color name="colorTextAccent">#f5f5f5</color>
+    <color name="tv_branding_dark">#ffbf360c</color>
+    <color name="tv_branding_accent">#00B8D4</color>
+    <color name="bt_accent">#00B8D4</color>
+    <color name="media_item_icon_playing">@color/bt_accent</color>
+    <color name="media_item_icon_not_playing">#ccc</color>
+    <color name="error_message_background">#ffff1600</color>
+    <color name="tv_search_button">#ff0097A7</color>
+    <color name="default_background">#0096a6</color>
+    <color name="transparent_black">#99000000</color>
+
+    <color name="colorBackground">#F3F3F3</color>
+    <color name="darkPrimary">#070E21</color>
+    <color name="lightBlue">#78849E</color>
+    <color name="selectedNavColor">@color/colorAccent</color>
+    <color name="unSelectedNavColor">@color/darkPrimary</color>
+    <color name="colorNavItemBg">#E9E9E9</color>
+    <color name="colorNavItemBgSelected">#5EFF4060</color>
+    <color name="colorBurOverlay">#F3F5F5F5</color>´´p
+    <color name="seek_bar_background">#454956</color>
+    <color name="fadedColorPrimary">#EEEEEE</color>
+    <color name="textColorPrimary">#DD000000</color>
+    <color name="textColorSecondary">#89000000</color>
+    <color name="search_icon_tint">#BABFCF</color>
+</resources>

@@ -1,0 +1,527 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "batchId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "publisher",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address[]",
+				"name": "stakeholders",
+				"type": "address[]"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "brandId",
+				"type": "uint256"
+			}
+		],
+		"name": "BatchItemCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "stageId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "summary",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "publisher",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "location",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "natureScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "climateScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "labourScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "communityScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "wasteScore",
+						"type": "uint32"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct CircularChain.Esg",
+				"name": "esgScore",
+				"type": "tuple"
+			}
+		],
+		"name": "StageItemCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_batchId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_summary",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_location",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "natureScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "climateScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "labourScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "communityScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "wasteScore",
+						"type": "uint32"
+					}
+				],
+				"internalType": "struct CircularChain.Esg",
+				"name": "_esg",
+				"type": "tuple"
+			}
+		],
+		"name": "addNewStage",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_brandId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "_stakeholders",
+				"type": "address[]"
+			}
+		],
+		"name": "createBatch",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "batchList",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "batchId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "publisher",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "brandId",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_batchId",
+				"type": "uint256"
+			}
+		],
+		"name": "calculateAggregateESGScore",
+		"outputs": [
+			{
+				"components": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "natureScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "climateScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "labourScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "communityScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "wasteScore",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct CircularChain.Esg",
+						"name": "esg",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "noOfItems",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CircularChain.ESGScoresNLength",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_batchId",
+				"type": "uint256"
+			}
+		],
+		"name": "fetchBatchDetails",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "natureScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "climateScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "labourScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "communityScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "wasteScore",
+						"type": "uint32"
+					}
+				],
+				"internalType": "struct CircularChain.Esg",
+				"name": "",
+				"type": "tuple"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_batchId",
+				"type": "uint256"
+			}
+		],
+		"name": "fetchBatchStages",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "stageId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "summary",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "publisher",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "location",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "natureScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "climateScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "labourScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "communityScore",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "wasteScore",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct CircularChain.Esg",
+						"name": "esgScore",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "batchId",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct CircularChain.Stage[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "stageList",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "stageId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "summary",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "publisher",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "location",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "uint32",
+						"name": "natureScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "climateScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "labourScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "communityScore",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "wasteScore",
+						"type": "uint32"
+					}
+				],
+				"internalType": "struct CircularChain.Esg",
+				"name": "esgScore",
+				"type": "tuple"
+			},
+			{
+				"internalType": "uint256",
+				"name": "batchId",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

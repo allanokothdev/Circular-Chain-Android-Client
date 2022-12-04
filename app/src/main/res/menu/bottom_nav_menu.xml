@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_collection"
+        android:icon="@drawable/collection_selector"
+        android:title="@string/saving_groups" />
+
+    <item
+        android:id="@+id/navigation_exhibition"
+        android:icon="@drawable/explore_selector"
+        android:title="@string/investments" />
+
+    <item
+        android:id="@+id/navigation_bookmark"
+        android:icon="@drawable/notification_selector"
+        android:title="@string/notifications" />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/chat_selector"
+        android:title="@string/chats" />
+
+
+</menu>

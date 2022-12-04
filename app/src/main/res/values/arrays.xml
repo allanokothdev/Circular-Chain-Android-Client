@@ -1,0 +1,106 @@
+<resources>
+    <!-- Arrays &amp;-->
+
+    <string-array name="programs">
+        <item>Business</item>
+        <item>Politics</item>
+        <item>Lifestyle</item>
+        <item>Sports</item>
+        <item>International</item>
+    </string-array>
+
+
+    <string-array name="gender">
+        <item>All</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="location">
+        <item>Ghana</item>
+        <item>South Africa</item>
+        <item>Nigeria</item>
+        <item>Tanzanie</item>
+    </string-array>
+
+    <string-array name="tasks">
+        <item>Launch New Product</item>
+        <item>Scale Existing Product</item>
+        <item>Connect with Local Producers</item>
+        <item>Connect with Local Distributors</item>
+        <item>Connect with Local Manufacturers</item>
+        <item>Connect with Local Industry Experts</item>
+        <item>Connect with Industry Stakeholders</item>
+        <item>Connect with Local Government Officials</item>
+    </string-array>
+
+    <string-array name="agegroup">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="phone">
+        <item>All</item>
+        <item>Android</item>
+        <item>iPhone</item>
+    </string-array>
+
+    <string-array name="industry">
+        <item>Beauty and Cosmetics</item>
+        <item>Betting and Gambling</item>
+        <item>Beverage Company</item>
+        <item>Cargo and Freight</item>
+        <item>Community Service</item>
+        <item>Chemical Company</item>
+        <item>Computer Company</item>
+        <item>Consulting Agency</item>
+        <item>Consumer Goods</item>
+        <item>Education</item>
+        <item>Energy Company</item>
+        <item>Event Services</item>
+        <item>Fashion and Clothing</item>
+        <item>Food and Drinks</item>
+        <item>Financial Services</item>
+        <item>Government Organization</item>
+        <item>Health</item>
+        <item>Industrial Company</item>
+        <item>Insurance Services</item>
+        <item>Internet Company</item>
+        <item>Labor Union</item>
+        <item>Marketing Agency</item>
+        <item>Medical Company</item>
+        <item>Motor Vehicle Company</item>
+        <item>Non Governmental Organization</item>
+        <item>Nonprofit Organization</item>
+        <item>Political Organization</item>
+        <item>Pharmaceutical Company</item>
+        <item>Political Party</item>
+        <item>Religious Organization</item>
+        <item>Retail Company</item>
+        <item>Real Estate</item>
+        <item>Startup</item>
+        <item>Tourism and Hospitality</item>
+        <item>Telecommunication Company</item>
+        <item>Travel Company</item>
+        <item>Transport Company</item>
+    </string-array>
+
+    <string-array name="size">
+        <item>Personal Profile</item>
+        <item>Small Business</item>
+        <item>Medium Sized Business</item>
+        <item>Large Corporation</item>
+        <item>Campaign</item>
+    </string-array>
+
+
+    <string-array name="advertisementstypes">
+        <item>Classifieds</item>
+        <item>Events</item>
+        <item>Live Streaming</item>
+        <item>Mobile Banners</item>
+        <item>Featured Articles</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>

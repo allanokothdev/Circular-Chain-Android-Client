@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    tools:context=".CreateProduct">
+
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/colorPrimary"
+        android:background="@color/colorWhite"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="17sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="@string/create_product"
+            android:layout_gravity="center_vertical|start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:background="@color/white"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                app:cardCornerRadius="@dimen/padding_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:contentDescription="@string/cover_image"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="2:1"
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="@dimen/dimen_5"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_domain_24dp"
+                android:layout_marginTop="24dp"
+                android:hint="@string/enter_product_name"
+                android:textSize="18sp"
+                android:textCursorDrawable="@color/colorBlack"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/open_sans_semibold"
+                android:id="@+id/titleTextInputEditText"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_chat_container"
+                android:paddingEnd="@dimen/dimen_10"
+                android:paddingStart="@dimen/dimen_10"
+                android:layout_height="@dimen/dimen_60"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="@dimen/dimen_5"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_domain_24dp"
+                android:layout_marginTop="24dp"
+                android:hint="@string/enter_product_summary"
+                android:textSize="18sp"
+                android:minHeight="@dimen/dimen_60"
+                android:textCursorDrawable="@color/colorBlack"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/open_sans_semibold"
+                android:id="@+id/summaryTextInputEditText"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_chat_container"
+                android:paddingEnd="@dimen/dimen_10"
+                android:paddingStart="@dimen/dimen_10"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:drawablePadding="@dimen/dimen_5"
+                android:drawableTint="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_domain_24dp"
+                android:layout_marginTop="24dp"
+                android:hint="@string/enter_batch_number"
+                android:textSize="18sp"
+                android:textCursorDrawable="@color/colorBlack"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/open_sans_semibold"
+                android:id="@+id/batchTextInputEditText"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_chat_container"
+                android:paddingEnd="@dimen/dimen_10"
+                android:paddingStart="@dimen/dimen_10"
+                android:layout_height="@dimen/dimen_60"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:textSize="16sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:background="@drawable/primary_background_button"
+                android:textColor="@color/colorWhite"
+                android:text="@string/publish"
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_60"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/progressBar"
+        android:layout_gravity="bottom|center_horizontal"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_30"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorName="BallPulseIndicator" />
+</RelativeLayout>

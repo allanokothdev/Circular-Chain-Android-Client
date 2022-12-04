@@ -1,0 +1,114 @@
+plugins {
+    id 'com.android.application'
+    //id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.circularchained.android"
+        minSdkVersion 24
+        targetSdkVersion 31
+        versionCode 8
+        versionName "0.0.7"
+        multiDexEnabled = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    //GOOGLE
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //EXTRA
+    implementation 'com.ramotion.directselect:direct-select:0.1.1'
+    implementation 'com.github.midorikocak:currency-picker-android:1.2.1'
+    implementation 'net.steamcrafted:load-toast:1.0.12'
+    implementation 'com.hanks:passcodeview:0.1.2'
+    implementation 'com.shuhart.stepview:stepview:1.2.8'
+    implementation 'com.chaos.view:pinview:1.3.2'
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.4.7'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.hbb20:ccp:2.3.1'
+    implementation "com.wang.avi:library:2.1.3"
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-functions'
+
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.1'
+    implementation 'androidx.paging:paging-runtime:2.0.0'
+    implementation 'org.jetbrains:annotations:16.0.2'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'androidx.work:work-runtime:2.5.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation 'org.web3j:core:4.6.0-android'
+    implementation 'com.github.chnouman:AwesomeDialog:1.0.4'
+    implementation "androidx.security:security-crypto:1.0.0"
+    implementation 'com.lgann.develop:mnemonic-sdk:1.0.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.jjoe64:graphview:4.2.2'
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.bdhobare:mpesa:0.0.6'
+    implementation 'com.afollestad.material-dialogs:core:0.9.5.0'
+
+    //QR CODE
+    implementation 'com.journeyapps:zxing-android-embedded:4.0.2'
+    implementation 'com.google.zxing:core:3.4.0'
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.0'
+    implementation 'com.karumi:dexter:5.0.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
