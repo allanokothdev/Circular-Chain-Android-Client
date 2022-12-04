@@ -40,7 +40,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 app:cardCornerRadius="@dimen/padding_8"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +65,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="@dimen/dimen_5"
                 android:drawableTint="@color/colorPrimary"
-                android:drawableStart="@drawable/ic_domain_24dp"
+                android:drawableStart="@drawable/outline_article_24"
                 android:layout_marginTop="24dp"
                 android:hint="@string/enter_product_name"
                 android:textSize="18sp"
@@ -83,14 +83,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="@dimen/dimen_5"
                 android:drawableTint="@color/colorPrimary"
-                android:drawableStart="@drawable/ic_domain_24dp"
+                android:drawableStart="@drawable/outline_article_24"
                 android:layout_marginTop="24dp"
                 android:hint="@string/enter_product_summary"
                 android:textSize="18sp"
                 android:minHeight="@dimen/dimen_60"
                 android:textCursorDrawable="@color/colorBlack"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName"
+                android:inputType="textShortMessage|textImeMultiLine|textMultiLine"
                 android:fontFamily="@font/open_sans_semibold"
                 android:id="@+id/summaryTextInputEditText"
                 android:layout_width="match_parent"
@@ -102,13 +102,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:drawablePadding="@dimen/dimen_5"
                 android:drawableTint="@color/colorPrimary"
-                android:drawableStart="@drawable/ic_domain_24dp"
+                android:drawableStart="@drawable/outline_article_24"
                 android:layout_marginTop="24dp"
                 android:hint="@string/enter_batch_number"
                 android:textSize="18sp"
                 android:textCursorDrawable="@color/colorBlack"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
+                android:imeOptions="actionDone"
+                android:inputType="number"
                 android:fontFamily="@font/open_sans_semibold"
                 android:id="@+id/batchTextInputEditText"
                 android:layout_width="match_parent"
@@ -116,6 +116,22 @@
                 android:paddingEnd="@dimen/dimen_10"
                 android:paddingStart="@dimen/dimen_10"
                 android:layout_height="@dimen/dimen_60"/>
+
+            <TextView
+                android:fontFamily="@font/open_sans_bold"
+                android:layout_marginTop="24dp"
+                android:text="@string/select_listing_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+                android:layout_marginTop="8dp"
+                android:id="@+id/spinner"
+                android:imeOptions="actionDone"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded_chat_container"
+                android:entries="@array/category" />
 
             <Button
                 android:textAllCaps="false"

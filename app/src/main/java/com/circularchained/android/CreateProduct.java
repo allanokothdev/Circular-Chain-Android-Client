@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -39,6 +40,7 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
     private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private Button button;
     private ImageView imageView;
+    private Spinner spinner;
     private TextInputEditText titleTextInputEditText;
     private TextInputEditText summaryTextInputEditText;
     private TextInputEditText batchTextInputEditText;
@@ -58,6 +60,7 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
         titleTextInputEditText = findViewById(R.id.titleTextInputEditText);
         summaryTextInputEditText = findViewById(R.id.summaryTextInputEditText);
         batchTextInputEditText = findViewById(R.id.batchTextInputEditText);
+        spinner = findViewById(R.id.spinner);
         progressBar = findViewById(R.id.progressBar);
         button.setOnClickListener(this);
         imageView.setOnClickListener(this);
@@ -71,6 +74,8 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
             String title = titleTextInputEditText.getText().toString().trim();
             String summary = summaryTextInputEditText.getText().toString().trim();
             String batch = batchTextInputEditText.getText().toString().trim();
+            String category = spinner.getSelectedItem().toString().trim();
+
             progressBar.setVisibility(View.VISIBLE);
 
             if (TextUtils.isEmpty(title)) {
@@ -97,10 +102,16 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(mContext, "Add Product Photo Profile Photo",Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
 
+            } else if (TextUtils.isEmpty(category)){
+
+                imageView.requestFocus();
+                Toast.makeText(mContext, "Select Product Category",Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+
             } else {
                 button.setEnabled(false);
                 progressBar.setVisibility(View.VISIBLE);
-                createProduct(title, summary, batch);
+                createProduct(title, summary, batch, category);
             }
         } else if (v.getId()==R.id.imageView){
 
@@ -112,14 +123,15 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void createProduct(String title, String summary, String batch){
+    private void createProduct(String title, String summary, String batch, String category){
         try {
             ArrayList<String> tags = new ArrayList<>();
             tags.add(batch);
             tags.add(title);
+            tags.add(category);
             String productID = firebaseFirestore.collection(Constants.PRODUCTS).document().getId();
             if (downloadUrlString != null){
-                Product product = new Product(productID,title,downloadUrlString,summary,Integer.parseInt(batch),0,tags);
+                Product product = new Product(productID,title,downloadUrlString,summary,category,Integer.parseInt(batch),0,tags);
                 firebaseFirestore.collection(Constants.PRODUCTS).document(productID).set(product).addOnSuccessListener(unused -> {
                     progressBar.setVisibility(View.GONE);
                     finishAfterTransition();
@@ -139,7 +151,7 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
                 uploadTask.addOnSuccessListener(taskSnapshot -> ref.getDownloadUrl().addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         Uri downloadUri = task.getResult();
-                        Product product = new Product(productID,title,downloadUri.toString(),summary,Integer.parseInt(batch),0,tags);
+                        Product product = new Product(productID,title,downloadUri.toString(),summary,category,Integer.parseInt(batch),0,tags);
                         firebaseFirestore.collection(Constants.PRODUCTS).document(productID).set(product).addOnSuccessListener(unused -> {
                             progressBar.setVisibility(View.GONE);
                             finishAfterTransition();

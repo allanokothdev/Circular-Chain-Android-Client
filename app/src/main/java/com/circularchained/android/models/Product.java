@@ -9,6 +9,7 @@ public class Product implements Serializable {
     private String title;
     private String pic;
     private String summary;
+    private String category;
     private int batchId;
     private float rating;
     private ArrayList<String> tags;
@@ -16,11 +17,12 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(String id, String title, String pic, String summary, int batchId, float rating, ArrayList<String> tags) {
+    public Product(String id, String title, String pic, String summary, String category, int batchId, float rating, ArrayList<String> tags) {
         this.id = id;
         this.title = title;
         this.pic = pic;
         this.summary = summary;
+        this.category = category;
         this.batchId = batchId;
         this.rating = rating;
         this.tags = tags;
@@ -56,6 +58,14 @@ public class Product implements Serializable {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getBatchId() {

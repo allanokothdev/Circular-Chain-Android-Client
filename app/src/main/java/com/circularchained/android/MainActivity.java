@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.circularchained.android.constants.Constants;
+import com.circularchained.android.utils.RecyclerItemDecoration;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.circularchained.android.adapters.ProductAdapter;
 import com.circularchained.android.listeners.ProductItemClickListener;
@@ -43,9 +44,8 @@ public class MainActivity extends AppCompatActivity implements ProductItemClickL
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        DividerItemDecoration divider = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-        divider.setDrawable(Objects.requireNonNull(ContextCompat.getDrawable(mContext, R.drawable.posts_divider)));
-        recyclerView.addItemDecoration(divider);
+        RecyclerItemDecoration recyclerItemDecoration = new RecyclerItemDecoration(mContext,getResources().getDimensionPixelSize(R.dimen.header_height),true,getSectionCallback(objectList));
+        recyclerView.addItemDecoration(recyclerItemDecoration);
 
         ImageView imageView = findViewById(R.id.imageView);
         imageView.setOnClickListener(this);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements ProductItemClickL
 
 
     private void fetchObjects(){
-        Query query = firebaseFirestore.collection(Constants.PRODUCTS).orderBy("id", Query.Direction.DESCENDING);
+        Query query = firebaseFirestore.collection(Constants.PRODUCTS).orderBy("category", Query.Direction.ASCENDING);
         registration = query.addSnapshotListener((queryDocumentSnapshots, e) -> {
             if (queryDocumentSnapshots != null){
                 for (DocumentChange documentChange: queryDocumentSnapshots.getDocumentChanges()){
@@ -120,5 +120,17 @@ public class MainActivity extends AppCompatActivity implements ProductItemClickL
         intent.putExtras(bundle);
         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, Pair.create(imageView, product.getId()));
         startActivity(intent,activityOptionsCompat.toBundle());
+    }
+
+    private RecyclerItemDecoration.SectionCallback getSectionCallback(final List<Product> objectList) {
+        return new RecyclerItemDecoration.SectionCallback() {
+            @Override public boolean isSection(int pos) {
+                return pos==0 || !objectList.get(pos).getCategory().equals(objectList.get(pos - 1).getCategory());
+            }
+            @Override public String getSectionHeaderName(int pos) {
+                Product product = objectList.get(pos);
+                return product.getCategory();
+            }
+        };
     }
 }

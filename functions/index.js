@@ -26,10 +26,10 @@ exports.createWallet = functions.https.onCall(() => {
 });
 
 // FETCH SUPPLY CHAIN STAGES
-exports.fetchStages = functions.https.onCall(async (data, context) => {
+exports.fetchStages = functions.https.onCall(async (_data, context) => {
   try {
-    const privateKey = data.key;
-    const batchId = data.batch;
+    const privateKey = _data.key;
+    const batchId = _data.batch;
     const signer = new ethers.Wallet(privateKey, provider);
     const circularContract = new ethers.Contract(CircularChainContractAddress, CircularChainABI, signer);
     // fetching the product stages using their batch ID from the Circular Chain contracts

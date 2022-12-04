@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     app:cardCornerRadius="8dp"
+    android:layout_margin="@dimen/dimen_8"
     android:background="@color/colorWhite"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -51,9 +52,9 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-
-
+                
                 <RatingBar
+                    android:visibility="invisible"
                     android:rating="4"
                     android:numStars="5"
                     android:progressTint="@color/red"
@@ -65,19 +66,17 @@
             </RelativeLayout>
 
 
-            <SeekBar
+            <View
+                android:background="@color/colorGray"
                 android:layout_marginBottom="@dimen/padd_10"
                 android:layout_marginTop="@dimen/padd_10"
-                android:progress="50"
-                android:max="100"
-                android:id="@+id/seekbar"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"/>
+                android:layout_height="1dp"/>
 
             <TextView
                 android:scrollHorizontally="true"
                 android:ellipsize="end"
-                android:maxLines="3"
+                android:maxLines="2"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
                 android:fontFamily="@font/open_sans_regular"

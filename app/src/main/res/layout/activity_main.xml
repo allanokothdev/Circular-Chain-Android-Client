@@ -34,7 +34,6 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:padding="@dimen/dimen_8"
         android:layout_below="@id/toolbar"
         android:id="@+id/recyclerView"
         android:orientation="vertical"
@@ -51,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:textSize="16sp"
         android:minHeight="56dp"
         app:backgroundTint="@color/colorPrimary"

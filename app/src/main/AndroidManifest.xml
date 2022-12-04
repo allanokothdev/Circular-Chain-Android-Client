@@ -28,7 +28,7 @@
         <activity android:name=".CreateProduct" android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".MainActivity" android:theme="@style/CustomAppTheme" />
         <activity android:name=".Splash"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/CustomAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

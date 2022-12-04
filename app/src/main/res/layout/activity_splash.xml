@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/open_sans_semibold"
             android:textSize="16sp"
             android:textAlignment="gravity"
@@ -95,7 +95,7 @@
         android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:indicatorColor="@color/colorWhite"
+        app:indicatorColor="@color/colorPrimary"
         app:indicatorName="BallPulseIndicator" />
 
 </RelativeLayout>
