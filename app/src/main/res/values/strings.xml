@@ -170,7 +170,9 @@
     <string name="enter_batch_number">Enter Batch Number</string>
     <string name="enter_product_summary">Enter Product Summary</string>
 
-    <string name="steps">Step %d</string>
+    <string name="steps">Step %s</string>
+    <string name="check_sustainability">Check Sustainability</string>
+    <string name="_4_5">(%.0f/5)</string>
 
 
 </resources>

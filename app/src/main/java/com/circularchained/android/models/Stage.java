@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class Stage implements Serializable{
 
-    private int stageId;
+    private String stageId;
     private String title;
     private String summary;
     private String publisher;
     private long timestamp;
     private String location;
     private Esg esgScore;
-    private int batchId;
+    private String batchId;
 
     public Stage() {
     }
 
-    public Stage(int stageId, String title, String summary, String publisher, long timestamp, String location, Esg esgScore, int batchId) {
+    public Stage(String stageId, String title, String summary, String publisher, long timestamp, String location, Esg esgScore, String batchId) {
         this.stageId = stageId;
         this.title = title;
         this.summary = summary;
@@ -27,11 +27,11 @@ public class Stage implements Serializable{
         this.batchId = batchId;
     }
 
-    public int getStageId() {
+    public String getStageId() {
         return stageId;
     }
 
-    public void setStageId(int stageId) {
+    public void setStageId(String stageId) {
         this.stageId = stageId;
     }
 
@@ -83,11 +83,11 @@ public class Stage implements Serializable{
         this.esgScore = esgScore;
     }
 
-    public int getBatchId() {
+    public String getBatchId() {
         return batchId;
     }
 
-    public void setBatchId(int batchId) {
+    public void setBatchId(String batchId) {
         this.batchId = batchId;
     }
 

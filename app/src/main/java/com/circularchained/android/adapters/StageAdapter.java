@@ -85,7 +85,7 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
             labourRatingBar.setRating(esg.getLabourScore());
             communityRatingBar.setRating(esg.getCommunityScore());
             wasteRatingBar.setRating(esg.getWasteScore());
-            dateTextView.setText(getTime(stage.getTimestamp()));
+            dateTextView.setText(getTime(stage.getTimestamp()*1000));
         }
     }
 

@@ -33,9 +33,23 @@ exports.fetchStages = functions.https.onCall(async (_data, context) => {
     const signer = new ethers.Wallet(privateKey, provider);
     const circularContract = new ethers.Contract(CircularChainContractAddress, CircularChainABI, signer);
     // fetching the product stages using their batch ID from the Circular Chain contracts
-    const data = await circularContract.fetchBatchStages(batchId);
+    const response = await circularContract.fetchBatchStages(batchId);
+    const stages = [];
+    await Promise.all(response.map(async (i) => {
+      const item = {
+        stageId: i.stageId.toNumber().toString(),
+        title: i.title,
+        summary: i.summary,
+        publisher: i.publisher,
+        timestamp: i.timestamp.toNumber(),
+        location: i.location,
+        esgScore: i.esgScore,
+        batchId: i.batchId.toNumber.toString(),
+      };
+      stages.push(item);
+    }));
 
-    return data;
+    return stages;
   } catch (error) {
     console.error(error);
     // Re-throwing the error as an HttpsError so that the client gets the error details.
@@ -52,9 +66,9 @@ exports.fetchBatchDetails = functions.https.onCall(async (data, context) => {
     const signer = new ethers.Wallet(privateKey, provider);
     const circularContract = new ethers.Contract(CircularChainContractAddress, CircularChainABI, signer);
     // fetching the respective batch details
-    const data = await circularContract.fetchBatchDetails(batchId);
+    const response = await circularContract.fetchBatchDetails(batchId);
 
-    return data;
+    return response;
   } catch (error) {
     console.error(error);
     // Re-throwing the error as an HttpsError so that the client gets the error details.
@@ -70,17 +84,19 @@ exports.calculateAggregateESGScore = functions.https.onCall(async (data, context
     const batchId = data.batch;
     const signer = new ethers.Wallet(privateKey, provider);
     const circularContract = new ethers.Contract(CircularChainContractAddress, CircularChainABI, signer);
-    // fetching the respective batch details
-    const data = await circularContract.calculateAggregateESGScore(batchId);
+    // Fetch Aggregate Sustainability Score
+    const response = await circularContract.calculateAggregateESGScore(batchId);
 
-    return data;
+    return {
+      esg: response.esg,
+      noOfItems: response.noOfItems.toNumber(),
+    };
   } catch (error) {
     console.error(error);
     // Re-throwing the error as an HttpsError so that the client gets the error details.
     throw new functions.https.HttpsError("unknown", error.message, error);
   }
 });
-
 
 // ADD NEW PRODUCT BATCH
 exports.createBatch = functions.https.onCall(async (data, context) => {
@@ -120,7 +136,6 @@ exports.addNewStage = functions.https.onCall(async (data, context) => {
     // Add New Supply Chain Stage
     const transaction = await circularContract.addNewStage(batchId, title, summary, location, [natureScore, climateScore, labourScore, communityScore, wasteScore]);
     const tx = await transaction.wait();
-
     return "Success";
   } catch (error) {
     console.error(error);

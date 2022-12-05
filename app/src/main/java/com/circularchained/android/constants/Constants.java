@@ -11,5 +11,6 @@ public class Constants {
 
     public static final String CREATE_WALLET = "createWallet";
     public static final String FETCH_STAGES = "fetchStages";
+    public static final String CALCULATE_ESG = "calculateAggregateESGScore";
 
 }

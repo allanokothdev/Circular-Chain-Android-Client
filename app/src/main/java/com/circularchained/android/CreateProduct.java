@@ -131,7 +131,7 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
             tags.add(category);
             String productID = firebaseFirestore.collection(Constants.PRODUCTS).document().getId();
             if (downloadUrlString != null){
-                Product product = new Product(productID,title,downloadUrlString,summary,category,Integer.parseInt(batch),0,tags);
+                Product product = new Product(productID,title,downloadUrlString,summary,category,Integer.parseInt(batch),tags);
                 firebaseFirestore.collection(Constants.PRODUCTS).document(productID).set(product).addOnSuccessListener(unused -> {
                     progressBar.setVisibility(View.GONE);
                     finishAfterTransition();
@@ -151,7 +151,7 @@ public class CreateProduct extends AppCompatActivity implements View.OnClickList
                 uploadTask.addOnSuccessListener(taskSnapshot -> ref.getDownloadUrl().addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         Uri downloadUri = task.getResult();
-                        Product product = new Product(productID,title,downloadUri.toString(),summary,category,Integer.parseInt(batch),0,tags);
+                        Product product = new Product(productID,title,downloadUri.toString(),summary,category,Integer.parseInt(batch),tags);
                         firebaseFirestore.collection(Constants.PRODUCTS).document(productID).set(product).addOnSuccessListener(unused -> {
                             progressBar.setVisibility(View.GONE);
                             finishAfterTransition();

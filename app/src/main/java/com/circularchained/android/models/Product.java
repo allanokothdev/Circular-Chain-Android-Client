@@ -11,20 +11,18 @@ public class Product implements Serializable {
     private String summary;
     private String category;
     private int batchId;
-    private float rating;
     private ArrayList<String> tags;
 
     public Product() {
     }
 
-    public Product(String id, String title, String pic, String summary, String category, int batchId, float rating, ArrayList<String> tags) {
+    public Product(String id, String title, String pic, String summary, String category, int batchId, ArrayList<String> tags) {
         this.id = id;
         this.title = title;
         this.pic = pic;
         this.summary = summary;
         this.category = category;
         this.batchId = batchId;
-        this.rating = rating;
         this.tags = tags;
     }
 
@@ -74,14 +72,6 @@ public class Product implements Serializable {
 
     public void setBatchId(int batchId) {
         this.batchId = batchId;
-    }
-
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
     }
 
     public ArrayList<String> getTags() {

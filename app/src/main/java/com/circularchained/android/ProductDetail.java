@@ -26,10 +26,14 @@ import com.circularchained.android.models.Esg;
 import com.circularchained.android.models.Product;
 import com.circularchained.android.models.Stage;
 import com.circularchained.android.utils.GetUser;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.functions.FirebaseFunctions;
 import com.google.firebase.functions.HttpsCallableResult;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import org.web3j.crypto.Hash;
+
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,29 +88,25 @@ public class ProductDetail extends AppCompatActivity {
         firebaseFunctions.getHttpsCallable(Constants.FETCH_STAGES).call(data).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
 
-                ArrayList<Object> result = (ArrayList<Object>) task.getResult().getData();
-                Toast.makeText(mContext, result.toString(), Toast.LENGTH_SHORT).show();
+                ArrayList<HashMap> result = (ArrayList<HashMap>) task.getResult().getData();
+                //Toast.makeText(mContext, result.toString(), Toast.LENGTH_SHORT).show();
 
                 if (result != null){
-                    for (Object response: result){
-                        try {
-                            int stageId = new BigInteger(String.valueOf(response.getClass().getField(""))).intValue();
-                            int batch = new BigInteger(String.valueOf(response.getClass().getField(""))).intValue();
-                            String title = response.getClass().getField("").toString();
-                            String publisher = response.getClass().getField("").toString();;
-                            String summary = response.getClass().getField("").toString();;
-                            long timestamp = new BigInteger(String.valueOf(response.getClass().getField(""))).longValue();
-                            String location = response.getClass().getField("").toString();;
-                            Esg esg = response.getClass().getField("").get(Object);
-                            
+                    for (HashMap hashMap: result){
+                        ArrayList<Integer> arrayList = (ArrayList<Integer>) hashMap.get("esgScore");
+                        assert arrayList != null;
+                        Integer[] ratings =  arrayList.toArray(new Integer[arrayList.size()]);
+                        Esg esg = new Esg(ratings[0],ratings[1],ratings[2],ratings[3],ratings[4]);
 
-                    } catch (NoSuchFieldException e) {
-                        e.printStackTrace();
-                    }
+                        String stageId = hashMap.get("stageId").toString();
+                        String title = hashMap.get("title").toString();
+                        String summary = hashMap.get("summary").toString();
+                        String publisher = hashMap.get("publisher").toString();
+                        long timestamp = Long.parseLong(hashMap.get("timestamp").toString());
+                        String location = hashMap.get("location").toString();
+                        String batchID = hashMap.get("batchId").toString();
 
-                        Stage stage = new Stage(stageId,title,summary,publisher,timestamp,location,esg,batch);
-
-
+                        Stage stage = new Stage(stageId,title,summary,publisher,timestamp,location,esg,batchID);
                         if (!objectList.contains(stage)){
                             objectList.add(0,stage);
                             adapter.notifyDataSetChanged();
@@ -115,6 +115,8 @@ public class ProductDetail extends AppCompatActivity {
                 } else {
                     Toast.makeText(mContext, "Sorry, we are yet to verify the Sustainability of this product", Toast.LENGTH_SHORT).show();
                 }
+
+
                 progressBar.setVisibility(View.INVISIBLE);
 
             } else {
@@ -123,6 +125,4 @@ public class ProductDetail extends AppCompatActivity {
             }
         });
     }
-
-
 }
