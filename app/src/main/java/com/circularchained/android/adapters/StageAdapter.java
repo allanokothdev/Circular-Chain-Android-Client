@@ -5,7 +5,6 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -13,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.circularchained.android.R;
+import com.circularchained.android.models.Esg;
 import com.circularchained.android.models.Stage;
 
 import java.util.Calendar;
@@ -21,9 +21,8 @@ import java.util.Locale;
 
 public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
 
-    private final String TAG = this.getClass().getSimpleName();
-    private Context mContext;
-    private List<Stage> stringList;
+    private final Context mContext;
+    private final List<Stage> stringList;
 
     public StageAdapter(Context mContext, List<Stage> stringList){
         this.mContext = mContext;
@@ -39,7 +38,7 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ((ViewHolder) holder).bind(position);
+        holder.bind(position);
     }
 
     @Override
@@ -49,7 +48,6 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private final ImageView imageView;
         private final TextView textView;
         private final TextView subTextView;
         private final TextView subItemTextView;
@@ -64,7 +62,6 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
         private ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.textView);
             subTextView = itemView.findViewById(R.id.subTextView);
             subItemTextView = itemView.findViewById(R.id.subItemTextView);
@@ -79,17 +76,16 @@ public class StageAdapter extends RecyclerView.Adapter<StageAdapter.ViewHolder>{
         void bind(int position) {
 
             Stage stage = stringList.get(position);
-
-            textView.setText(stage.getStep());
+            Esg esg = stage.getEsgScore();
+            textView.setText(mContext.getString(R.string.steps,stage.getStageId()));
             subTextView.setText(stage.getTitle());
             subItemTextView.setText(stage.getLocation());
-            natureRatingBar.setRating(stage.getNature());
-            climateRatingBar.setRating(stage.getClimate());
-            labourRatingBar.setRating(stage.getLabour());
-            communityRatingBar.setRating(stage.getCommunity());
-            wasteRatingBar.setRating(stage.getWaste());
-            dateTextView.setText(getTime(stage.getDate()));
-
+            natureRatingBar.setRating(esg.getNatureScore());
+            climateRatingBar.setRating(esg.getClimateScore());
+            labourRatingBar.setRating(esg.getLabourScore());
+            communityRatingBar.setRating(esg.getCommunityScore());
+            wasteRatingBar.setRating(esg.getWasteScore());
+            dateTextView.setText(getTime(stage.getTimestamp()));
         }
     }
 

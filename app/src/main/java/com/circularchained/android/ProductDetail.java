@@ -22,6 +22,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.circularchained.android.adapters.StageAdapter;
 import com.circularchained.android.constants.Constants;
+import com.circularchained.android.models.Esg;
 import com.circularchained.android.models.Product;
 import com.circularchained.android.models.Stage;
 import com.circularchained.android.utils.GetUser;
@@ -29,6 +30,7 @@ import com.google.firebase.functions.FirebaseFunctions;
 import com.google.firebase.functions.HttpsCallableResult;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -82,12 +84,29 @@ public class ProductDetail extends AppCompatActivity {
         firebaseFunctions.getHttpsCallable(Constants.FETCH_STAGES).call(data).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
 
-                HttpsCallableResult resultt = task.getResult();
-                Toast.makeText(mContext, resultt.toString(), Toast.LENGTH_SHORT).show();
+                ArrayList<Object> result = (ArrayList<Object>) task.getResult().getData();
+                Toast.makeText(mContext, result.toString(), Toast.LENGTH_SHORT).show();
 
-                Stage[] result = (Stage[]) task.getResult().getData();
                 if (result != null){
-                    for (Stage stage: result){
+                    for (Object response: result){
+                        try {
+                            int stageId = new BigInteger(String.valueOf(response.getClass().getField(""))).intValue();
+                            int batch = new BigInteger(String.valueOf(response.getClass().getField(""))).intValue();
+                            String title = response.getClass().getField("").toString();
+                            String publisher = response.getClass().getField("").toString();;
+                            String summary = response.getClass().getField("").toString();;
+                            long timestamp = new BigInteger(String.valueOf(response.getClass().getField(""))).longValue();
+                            String location = response.getClass().getField("").toString();;
+                            Esg esg = response.getClass().getField("").get(Object);
+                            
+
+                    } catch (NoSuchFieldException e) {
+                        e.printStackTrace();
+                    }
+
+                        Stage stage = new Stage(stageId,title,summary,publisher,timestamp,location,esg,batch);
+
+
                         if (!objectList.contains(stage)){
                             objectList.add(0,stage);
                             adapter.notifyDataSetChanged();

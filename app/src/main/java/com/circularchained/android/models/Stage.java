@@ -1,57 +1,38 @@
 package com.circularchained.android.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Stage implements Serializable{
 
-    private String id;
-    private String batchId;
+    private int stageId;
     private String title;
     private String summary;
-    private long date;
-    private int step;
+    private String publisher;
+    private long timestamp;
     private String location;
-    private float nature;
-    private float climate;
-    private float labour;
-    private float community;
-    private float waste;
-    private ArrayList<String> tags;
+    private Esg esgScore;
+    private int batchId;
 
     public Stage() {
     }
 
-    public Stage(String id, String batchId, String title, String summary, long date, int step, String location, float nature, float climate, float labour, float community, float waste, ArrayList<String> tags) {
-        this.id = id;
-        this.batchId = batchId;
+    public Stage(int stageId, String title, String summary, String publisher, long timestamp, String location, Esg esgScore, int batchId) {
+        this.stageId = stageId;
         this.title = title;
         this.summary = summary;
-        this.date = date;
-        this.step = step;
+        this.publisher = publisher;
+        this.timestamp = timestamp;
         this.location = location;
-        this.nature = nature;
-        this.climate = climate;
-        this.labour = labour;
-        this.community = community;
-        this.waste = waste;
-        this.tags = tags;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getBatchId() {
-        return batchId;
-    }
-
-    public void setBatchId(String batchId) {
+        this.esgScore = esgScore;
         this.batchId = batchId;
+    }
+
+    public int getStageId() {
+        return stageId;
+    }
+
+    public void setStageId(int stageId) {
+        this.stageId = stageId;
     }
 
     public String getTitle() {
@@ -70,20 +51,20 @@ public class Stage implements Serializable{
         this.summary = summary;
     }
 
-    public long getDate() {
-        return date;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setDate(long date) {
-        this.date = date;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
-    public int getStep() {
-        return step;
+    public long getTimestamp() {
+        return timestamp;
     }
 
-    public void setStep(int step) {
-        this.step = step;
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getLocation() {
@@ -94,57 +75,26 @@ public class Stage implements Serializable{
         this.location = location;
     }
 
-    public float getNature() {
-        return nature;
+    public Esg getEsgScore() {
+        return esgScore;
     }
 
-    public void setNature(float nature) {
-        this.nature = nature;
+    public void setEsgScore(Esg esgScore) {
+        this.esgScore = esgScore;
     }
 
-    public float getClimate() {
-        return climate;
+    public int getBatchId() {
+        return batchId;
     }
 
-    public void setClimate(float climate) {
-        this.climate = climate;
-    }
-
-    public float getLabour() {
-        return labour;
-    }
-
-    public void setLabour(float labour) {
-        this.labour = labour;
-    }
-
-    public float getCommunity() {
-        return community;
-    }
-
-    public void setCommunity(float community) {
-        this.community = community;
-    }
-
-    public float getWaste() {
-        return waste;
-    }
-
-    public void setWaste(float waste) {
-        this.waste = waste;
-    }
-
-    public ArrayList<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(ArrayList<String> tags) {
-        this.tags = tags;
+    public void setBatchId(int batchId) {
+        this.batchId = batchId;
     }
 
     @Override
     public boolean equals(@androidx.annotation.Nullable Object obj){
         Stage stage = (Stage) obj;
-        return id.matches(stage.getId());
+        assert stage != null;
+        return stageId==stage.getStageId();
     }
 }
